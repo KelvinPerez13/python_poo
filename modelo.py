@@ -1,7 +1,7 @@
 class filme:
     def __init__(self, nome, ano, duracao):
         self.__nome = nome.title()
-        self.ano = ano
+        self.__ano = ano
         self.duracao = duracao
         self.__likes = 0
 
@@ -14,6 +14,17 @@ class filme:
     @nome.setter
     def nome(self, novo_nome):
         self.__nome = novo_nome.title()
+    
+    #property serve para que eu possa exibir os atributos restritos da classe
+
+    @property
+    def ano(self):
+        return self.__ano
+    
+    # e o setter para que eu possa altera-los
+    @ano.setter
+    def ano(self, novo_ano):
+        self.__ano = novo_ano.title()
 
 
     @property    
