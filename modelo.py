@@ -1,12 +1,9 @@
-class filme:
-    def __init__(self, nome, ano, duracao):
+class programa:
+    def __init__(self, nome, ano):
         self.__nome = nome.title()
         self.__ano = ano
-        self.duracao = duracao
         self.__likes = 0
 
-    
-    
     @property
     def nome(self):
         return self.__nome
@@ -34,7 +31,21 @@ class filme:
     def input_like(self):
         self.__likes += 1
 
-class serie:
+
+
+
+
+class filme(programa):
+    def __init__(self, nome, ano, duracao):
+        super().__init__(nome, ano)
+        self.duracao = duracao
+        
+
+    
+    
+   
+
+class serie(programa):
     
     def __init__(self, nome, ano, temporadas):
         self.nome = nome.title()
@@ -42,7 +53,7 @@ class serie:
         self.temporadas = temporadas
 
 vingadores = filme('vingadores - guerra infinita', 2018, 160)
-suits = serie('suits - homens de terno', 2010, 2)
+#suits = serie('suits - homens de terno', 2010, 2)
 
 for t in range(5):
     vingadores.input_like()
