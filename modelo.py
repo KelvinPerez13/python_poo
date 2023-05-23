@@ -1,38 +1,35 @@
 class programa:
     def __init__(self, nome, ano):
-        self.__nome = nome.title()
-        self.__ano = ano
-        self.__likes = 0
+        self._nome = nome.title()
+        self._ano = ano
+        self._likes = 0
 
     @property
     def nome(self):
-        return self.__nome
+        return self._nome
 
     @nome.setter
     def nome(self, novo_nome):
-        self.__nome = novo_nome.title()
+        self._nome = novo_nome.title()
     
     #property serve para que eu possa exibir os atributos restritos da classe
 
     @property
     def ano(self):
-        return self.__ano
+        return self._ano
     
     # e o setter para que eu possa altera-los
     @ano.setter
     def ano(self, novo_ano):
-        self.__ano = novo_ano.title()
+        self._ano = novo_ano.title()
 
 
     @property    
     def likes(self):
-        return self.__likes
+        return self._likes
     
     def input_like(self):
-        self.__likes += 1
-
-
-
+        self._likes += 1
 
 
 class filme(programa):
@@ -40,20 +37,13 @@ class filme(programa):
         super().__init__(nome, ano)
         self.duracao = duracao
         
-
-    
-    
-   
-
 class serie(programa):
-    
     def __init__(self, nome, ano, temporadas):
-        self.nome = nome.title()
-        self.ano = ano
+        super().__init__(nome, ano)
         self.temporadas = temporadas
 
 vingadores = filme('vingadores - guerra infinita', 2018, 160)
-#suits = serie('suits - homens de terno', 2010, 2)
+suits = serie('suits - homens de terno', 2010, 2)
 
 for t in range(5):
     vingadores.input_like()
